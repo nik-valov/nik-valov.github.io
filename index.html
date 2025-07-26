@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikita Valov | Architectural Projects</title>
+    <title>Nikita&nbsp;Valov&nbsp;| Architectural Projects</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,39 +29,64 @@
             font-size: 1.2em;
             color: #ccc;
         }
-        main {
-            padding: 20px;
-        }
-        .project {
-            background: #fff;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 900px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .project h2 {
-            margin-top: 0;
-            font-size: 1.6em;
-            color: #222;
-        }
-        .project img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 15px 0;
-            border-radius: 4px;
-        }
-        .project p {
-            line-height: 1.6;
-            margin: 0 0 10px 0;
-        }
-        .project a {
-            color: #0066cc;
+        .social-links a {
+            margin: 0 10px;
+            color: #ccc;
             text-decoration: none;
         }
-        .project a:hover {
+        .social-links a:hover {
+            color: #fff;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        nav a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
             text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-card {
+            padding: 15px;
+            background: #f5f5f5;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background 0.2s;
+        }
+        .project-card:hover {
+            background: #ebebeb;
+        }
+        .project-card.active {
+            background: #e0e0e0;
+        }
+        #project-content {
+            margin-top: 20px;
+            display: none;
+        }
+        section {
+            padding: 40px 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        section h2 {
+            margin-top: 0;
         }
         footer {
             text-align: center;
@@ -82,91 +107,52 @@
         <a href="https://t.me/N1kname" target="_blank">Telegram</a>
         <a href="https://www.facebook.com/nikita.valov.73" target="_blank">Facebook</a>
         <a href="mailto:valov.n.m@gmail.com">Email</a>
-        <a href="tel:">Phone</a>
     </div>
+    <nav>
+        <ul>
+            <li><a href="#about">Обо&nbsp;мне</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+        </ul>
+    </nav>
 </header>
-
 <main>
-    <!-- Riad Anza Project -->
-    <section class="project">
-        <h2>Riad Anza III, Agadir, Morocco – 1st place (2022)</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/8ce5db156197383.6362aff48fb64.jpg" alt="Riad Anza III project">
-        <p>Social housing competition winner addressing the architectural non‑expressiveness of typical low‑budget housing while providing comfortable amenities and favorable economic indicators. Developed within the Zohry and Partners agency; includes conceptual design, space‑planning solutions, facades and interiors.</p>
-        <p><a href="https://www.behance.net/gallery/156197383/Riad-Anza-III-Agadir-Morocco-1st-place" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- Private Clinic / Ben Ahmed project -->
-    <section class="project">
-        <h2>Private Clinic, Ben Ahmed, Morocco – 2023</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/80ef8a177852795.64dde9957f847.png" alt="Ben Ahmed Clinic">
-        <p>A multifunctional six‑level clinic with emergency rooms, patient rooms, a delivery room and underground operational units. Two elevators ensure vertical communication; the project assigns a common architectural identity to all elements and organizes spaces hierarchically. Designed to integrate harmoniously with the environment using local materials and sun‑protection strategies. Developed within the Zohry and Partners agency with conceptual design, space‑planning, facades, interiors and modeling.</p>
-        <p><a href="https://www.behance.net/gallery/177852795/Ethnographic-Museum-of-Berber-culture-Morocco" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- Youth Palace Project -->
-    <section class="project">
-        <h2>Youth Palace “Zhastar”, Astana, Kazakhstan (concept) – 2022</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/a66420157921043.6381ef481bf13.jpg" alt="Youth Palace Zhastar concept">
-        <p>The palace is contained within a 65×65×65 m cube where blocks of varying shapes and sizes are connected by bright staircases and elevators. Each block serves a distinct function—children’s center, concert hall, discussion club, media center—using different colours and textures. The rigid crystalline grid juxtaposes dynamic and static, bringing order to multicoloured chaos. Developed with Studio 44 through sketch, project and rendering stages.</p>
-        <p><a href="https://www.behance.net/gallery/157921043/Youth-Palace-Zhastar-Kazakhstan-(concept)" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- Olympic Swimming Pool Project -->
-    <section class="project">
-        <h2>Olympic Swimming Pool, Agadir, Morocco (concept) – 2022</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/717250157731367.637e4160baa00.jpg" alt="Olympic swimming pool concept">
-        <p>This sustainable Olympic‑pool concept optimises space for international competitions and diverse sports activities. The design integrates with the urban environment; its flowing silhouette recalls a wave, combining appearance and functionality while expressing the movement of water. Developed within Zohry and Partners; includes concept design, planning, facades, interiors and modeling (Revit, 3ds Max).</p>
-        <p><a href="https://www.behance.net/gallery/157731367/Olympic-swimming-pool-in-Agadir-Morocco-(concept)" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- City of Trades Project -->
-    <section class="project">
-        <h2>City of Trades and Skills, Marrakesh‑Safi, Morocco – 3rd place (2022)</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/afe9e4157230215.Y3JvcCwxMDU0LDgyNSw0NjksMA.jpg" alt="City of Trades and Skills concept">
-        <p>A university complex that unites various students and reflects the blend of traditional past and innovative future. A pergola inspired by a neural network covers the central square and links buildings with local architectural elements, symbolising Morocco’s classical training system. Developed within the Zohry and Partners agency; project includes conceptual design, planning, facades, interiors and modeling.</p>
-        <p><a href="https://www.behance.net/gallery/157230215/City-of-Trades-and-Skills-inMarrakesh-SafiMorocco" target="_blank">View on Behance</a></p>
-    </section>
-       <!-- Ethnographic Museum of Berber Culture Project -->
-    <section class="project">
-        <h2>Ethnographic Museum of Berber culture, Morocco</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/acc5dd157819427.637fb6a962637.jpg" alt="Ethnographic Museum of Berber culture concept">
-        <p>The museum route ascends from origins to future, symbolising layers of regional identity. Visitors start at the foundation and end with a view of the initial model, illustrating commitment to the future while honouring tradition.</p>
-        <p><a href="https://www.behance.net/gallery/157819427/Ethnographic-Museum-of-Berber-culture-Morocco" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- Polytechnic University Project -->
-    <section class="project">
-        <h2>Polytechnic University, Dakhla-Oued Ed-Dahab, Morocco</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe1614157044613.63723e67d6370.jpg" alt="Polytechnic University concept">
-        <p>This competition-winning design proposes a new generation of educational institutions with a generative metal-frame sun canopy covered in Schuco metal mesh. It creates a comfortable environment for study, culture, sport and social life.</p>
-        <p><a href="https://www.behance.net/gallery/157044613/Polytechnic-University-Dakhla-Oued-Ed-Dahab-Morocco" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- ISTA University of Technology Project -->
-    <section class="project">
-        <h2>ISTA University of Technology in Yusufya, Morocco</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/b82e56156196671.Y3JvcCwyNzYxLDIxNjAsMTk4LDA.jpg" alt="ISTA University of Technology concept">
-        <p>The design reflects lines of geological formations on its facades, symbolising natural resources. Sustainable features harness solar power and optimise lighting and climate, emphasising a close connection between nature and technology.</p>
-        <p><a href="https://www.behance.net/gallery/156196671/ISTA-University-of-Technology-in-Yusufya-Morocco" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- Kazakh National Academy of Choreography Project -->
-    <section class="project">
-        <h2>Kazakh National Academy of Choreography, Astana, Kazakhstan</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/314d73158608955.Y3JvcCwxNjg1LDEzMTgsNTU0LDA.png" alt="Kazakh National Academy of Choreography concept">
-        <p>Central Asia's first higher-education choreographic academy is arranged as separate volumes connected by heated galleries with colonnades. The complex includes a ballet academy, studio theatre, school, institute, hotel and residences.</p>
-        <p><a href="https://www.behance.net/gallery/158608955/KAZAKH-NATIONAL-ACADEMY-OF-CHOREOGRAPHY" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- Pavilion of native trade and summer house Project -->
-    <section class="project">
-        <h2>Pavilion of native trade and summer house</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/9a5445214856975.67601a6a268c0.png" alt="Pavilion of native trade and summer house concept">
-        <p>Designed in 2017, this skin-trading pavilion and summer house sits at the intersection of Russia, Kazakhstan and Mongolia near a lake. It was built and recently re-visualised.</p>
-        <p><a href="https://www.behance.net/gallery/214856975/Pavilion-of-native-trade-and-summer-house" target="_blank">View on Behance</a></p>
-    </section>
-    <!-- Russian Railway Museum Project -->
-    <section class="project">
-        <h2>Russian Railway Museum in St. Petersburg, Russia</h2>
-        <img src="https://mir-s3-cdn-cf.behance.net/projects/max_808/c26411157388223.Y3JvcCwyMzAxLDE4MDAsNTEsMA.jpg" alt="Russian Railway Museum concept">
-        <p>This reconstruction of one of Europe's largest railway museums houses more than 35,000 artefacts and 118 pieces of rolling stock. The old and new buildings are connected by passages dedicated to different periods in railway history and include exhibition spaces, cafes, shops, a lecture hall and administrative offices.</p>
-        <p><a href="https://www.behance.net/gallery/157388223/Russian-Railway-Museum-in-St-Petersburg" target="_blank">View on Behance</a></p>
-    </section>
+    <div id="projects">
+        <div class="project-card" data-file="projects/riad-anza-iii.html">Riad&nbsp;Anza III</div>
+        <div class="project-card" data-file="projects/private-clinic.html">Private&nbsp;Clinic, Ben&nbsp;Ahmed</div>
+        <div class="project-card" data-file="projects/youth-palace-zhastar.html">Youth&nbsp;Palace&nbsp;“Zhastar”</div>
+        <div class="project-card" data-file="projects/olympic-swimming-pool.html">Olympic&nbsp;Swimming&nbsp;Pool</div>
+        <div class="project-card" data-file="projects/city-of-trades-and-skills.html">City&nbsp;of&nbsp;Trades&nbsp;and&nbsp;Skills</div>
+        <div class="project-card" data-file="projects/ethnographic-museum-berber.html">Ethnographic&nbsp;Museum&nbsp;of&nbsp;Berber&nbsp;Culture</div>
+        <div class="project-card" data-file="projects/polytechnic-university.html">Polytechnic&nbsp;University</div>
+        <div class="project-card" data-file="projects/ista-university-of-technology.html">ISTA&nbsp;University&nbsp;of&nbsp;Technology</div>
+        <div class="project-card" data-file="projects/kazakh-national-academy-choreography.html">Kazakh&nbsp;National&nbsp;Academy&nbsp;of&nbsp;Choreography</div>
+        <div class="project-card" data-file="projects/pavilion-of-native-trade-summer-house.html">Pavilion&nbsp;of&nbsp;Native&nbsp;Trade&nbsp;and&nbsp;Summer&nbsp;House</div>
+        <div class="project-card" data-file="projects/russian-railway-museum.html">Russian&nbsp;Railway&nbsp;Museum</div>
+    </div>
+    <div id="project-content"></div>
 </main>
+<section id="about">
+    <h2>Обо&nbsp;мне</h2>
+    <p>Меня зовут Никита Валов, я архитектурный дизайнер с опытом участия в международных конкурсах и реализации проектов различного масштаба. Я стремлюсь сочетать функциональность с эстетикой, уважая культурный контекст и учитывая устойчивость.</p>
+</section>
+<section id="services">
+    <h2>Услуги</h2>
+    <p>Предлагаю широкий спектр архитектурных услуг. Стоимость указана приблизительно и может варьироваться в зависимости от объёма и сложности:</p>
+    <ul>
+        <li>Консультация — 50 €</li>
+        <li>Эскизный проект — 200 €</li>
+        <li>Полный архитектурный проект — 500 €</li>
+        <li>Дизайн интерьера — 300 €</li>
+    </ul>
+</section>
+<section id="contacts">
+    <h2>Контакты</h2>
+    <p>Для связи используйте электронную почту <a href="mailto:valov.n.m@gmail.com">valov.n.m@gmail.com</a> или отправьте сообщение в Telegram <a href="https://t.me/N1kname" target="_blank">@N1kname</a>. Также вы можете следить за обновлениями в социальных сетях.</p>
+</section>
 <footer>
-    © 2025 Nikita Valov. All rights reserved.
+    © 2025 Nikita Valov. All rights reserved.
 </footer>
+<script src="scripts.js"></script>
 </body>
 </html>
