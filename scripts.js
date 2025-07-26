@@ -1,4 +1,3 @@
-// Скрипт динамической загрузки контента проектов
 document.addEventListener('DOMContentLoaded', function () {
     const cards = document.querySelectorAll('.project-card');
     const content = document.getElementById('project-content');
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.add('active');
             activeCard = card;
 
-            const file = card.getAttribute('data-file');
+            const file = card.getAttribute('data-file').replace(/^projects\//, '');
             try {
                 const resp = await fetch(file);
                 if (!resp.ok) throw new Error('Network response was not ok');
