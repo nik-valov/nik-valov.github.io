@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Gallery</title>
+<style>
+  body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
+  .gallery { display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px; padding:40px; }
+  .gallery-item { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.1); cursor:pointer; }
+  .gallery-item img { width:100%; display:block; }
+  .gallery-item .info { padding:15px; }
+  .gallery-item .info h3 { margin:0 0 10px 0; font-size:1.1em; }
+  .gallery-item .info p { margin:2px 0; font-size:0.9em; color:#666; }
+  .modal { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.8); display:none; align-items:center; justify-content:center; z-index:1000; }
+  .modal-content { background:#fff; width:80%; max-width:1000px; max-height:90%; overflow:auto; padding:20px; border-radius:8px; position:relative; }
+  .modal-close { position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer; }
+  .modal-img { width:100%; max-height:400px; object-fit:contain; }
+  .modal-desc { margin-top:15px; }
+</style>
+</head>
+<body>
+<h1 style="text-align:center; padding:20px;">Projects</h1>
+<div class="gallery" id="gallery"></div>
+
+<div class="modal" id="modal">
+  <div class="modal-content" id="modal-content">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <img class="modal-img" id="modal-img" src="" alt="">
+    <div class="modal-desc" id="modal-desc"></div>
+  </div>
+</div>
+
+<script>
+// Data for projects
+const projects = [
+  { id: 'riad-anza-iii', title: 'Riad Anza III', place: 'Agadir, Morocco', year: '2022', typology: 'Hospitality', thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/8ce5db156197383.6362aff48fb64.jpg' },
+  { id: 'private-clinic', title: 'Private Clinic', place: 'Ben Ahmed, Morocco', year: '2023', typology: 'Healthcare', thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/80ef8a177852795.64dde9957f847.png' },
+  { id: 'youth-palace-zhastar', title: 'Youth Palace “Zhastar”', place: 'Astana, Kazakhstan', year: '2022', typology: 'Cultural', thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/a662402157921043.6318ef481bf13.jpg' },
+  { id: 'olympic-swimming-pool', title: 'Olympic Swimming Pool', place: 'Agadir, Morocco', year: '2022', typology: 'Sports', thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/77125051773367.637e4160baa00.jpg' },
+  { id: 'city-of-trades-and-skills', title: 'City of Trades and Skills', place: 'Marrakesh-Safi, Morocco', year: '2022', typology: 'Educational', thumbnail: 'https://mir-s3-cdn-cf.behance.net/projects/max_808/afe9e4517230215.V3JvcCwxMDU0LDYwSjNsMA.jpg' },
+  { id: 'ethnographic-museum-berber', title: 'Ethnographic Museum of Berber Culture', place: 'Morocco', year: '2022', typology: 'Museum', thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/acc5dd157819427.6377b6a9262637.jpg' },
+  { id: 'polytechnic-university', title: 'Polytechnic University', place: 'Dakhla-Oued Ed-Dahab, Morocco', year: '2022', typology: 'Educational', thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/fe1614157044613.63723e67dd6370.jpg' },
+  { id: 'ista-university-of-technology', title: 'ISTA University of Technology', place: 'Yusfuya, Morocco', year: '2022', typology: 'Educational', thumbnail: 'https://mir-s3-cdn-cf.behance.net/projects/max_808/8b825e616196671.VC3JvcQwNYzlYLDIXMjAsMTk4LDA.jpg' },
+  { id: 'kazakh-national-academy-choreography', title: 'Kazakh National Academy of Choreography', place: 'Astana, Kazakhstan', year: '2022', typology: 'Educational', thumbnail: 'https://mir-s3-cdn-cf.behance.net/projects/max_808/314d731586089055.V3JvcCwxNjo1LDZeMTgsNTU0LDA.png' },
+  { id: 'pavilion-of-native-trade-summer-house', title: 'Pavilion of Native Trade and Summer House', place: 'Russia-Kazakhstan-Mongolia border', year: '2017', typology: 'Pavilion', thumbnail: 'https://mir-s3-cdn-cf.behance.net/project_modules/1400/9a544521485975.676016a6a268c0.png' },
+  { id: 'russian-railway-museum', title: 'Russian Railway Museum', place: 'St. Petersburg, Russia', year: '2022', typology: 'Museum', thumbnail: 'https://mir-s3-cdn-cf.behance.net/projects/max_808/26411157388223.V3JvcCwyMzAxLDE4MDAsNTEsMA.jpg' }
+];
+
+// Build gallery
+const gallery = document.getElementById('gallery');
+projects.forEach(proj => {
+  const item = document.createElement('div');
+  item.className = 'gallery-item';
+  item.innerHTML = `
+    <img src="${proj.thumbnail}" alt="${proj.title}">
+    <div class="info">
+      <h3>${proj.title}</h3>
+      <p>${proj.typology}</p>
+      <p>${proj.place}</p>
+      <p>${proj.year}</p>
+    </div>
+  `;
+  item.addEventListener('click', async () => {
+    const response = await fetch(proj.id + '.html');
+    const html = await response.text();
+    document.getElementById('modal-desc').innerHTML = html;
+    document.getElementById('modal-img').src = proj.thumbnail;
+    document.getElementById('modal').style.display = 'flex';
+  });
+  gallery.appendChild(item);
+});
+
+// Modal close handlers
+document.getElementById('modal-close').onclick = () => {
+  document.getElementById('modal').style.display = 'none';
+};
+document.getElementById('modal').onclick = (e) => {
+  if (e.target === document.getElementById('modal')) document.getElementById('modal').style.display = 'none';
+};
+</script>
+</body>
+</html>
